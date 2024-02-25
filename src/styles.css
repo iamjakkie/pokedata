@@ -1,0 +1,9 @@
+.pokemon-card {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    height: 200px;
+}
