@@ -130,18 +130,18 @@ const PokemonList = () => {
                     .map(pokemon => (
                         <Grid item xs={12} sm={6} md={4} key={pokemon.name} >
                             <Card onClick={() => fetchPokemonDetails(pokemon.url)} className='pokemon-card'>
-                                <CardContent>
-                                    <Typography variant="h5" style={{}}>{pokemon.name}</Typography>
+                                <CardContent className='card-content'>
+                                    <Typography variant="h5" style={{ color: '#FFE66D' }}>{pokemon.name}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
                     ))}
             </Grid>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                <Button disabled={currentPage === 1} onClick={gotoPrevPage}>Previous</Button>
-                <Button disabled={currentPage === pageCount} onClick={gotoNextPage}>Next</Button>
+                <Button className="button" disabled={currentPage === 1} onClick={gotoPrevPage}>Previous</Button>
+                <Button className="button" disabled={currentPage === pageCount} onClick={gotoNextPage}>Next</Button>
             </div>
-            <Dialog open={open} onClose={() => setOpen(false)}>
+            <Dialog style={{borderColor: 'black'}} open={open} onClose={() => setOpen(false)}>
                 <DialogTitle>{selectedPokemon.name}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>

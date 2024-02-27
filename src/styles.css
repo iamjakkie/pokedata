@@ -1,4 +1,4 @@
-.pokemon-card {
+/* .pokemon-card {
     cursor: pointer;
     border: 1px solid black;
     border-radius: 20px;
@@ -6,4 +6,99 @@
     text-align: center;
     margin: 20px;
     height: 200px;
+} */
+/* styles.css */
+
+body, html {
+    height: 100%; /* Ensure the body takes up the full viewport height */
+    margin: 0; /* Reset default margin */
+    overflow: hidden; /* Prevent scrolling caused by the scaling pseudo-element */
+  }
+  
+  body::before {
+    content: '';
+    position: fixed; /* Use fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle,#3B9B9C 10%, #3b6693 50%, #1B263B 100%);
+    z-index: -1; /* Ensure it's rendered below the content */
+    
+    animation: PulseAnimate 30s ease-in-out infinite;
+  }
+  
+  @keyframes PulseAnimate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 1;
+    }
+  }
+  
+  /* Ensure the content is positioned correctly */
+  .container {
+    position: relative;
+    z-index: 1; /* Higher than the pseudo-element to ensure it's on top */
+    height: 100%; /* Adjust as needed */
+  }
+  
+  .app-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the container */
+  }
+  
+  .alphabet-slider-container {
+    padding: 20px; /* Adjust based on your design */
+    height: calc(100vh - 40px); /* Adjust height to fit the viewport, considering padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the slider vertically */
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Allow the main content to take up the remaining space */
+    overflow: auto; /* Add scrolling to main content if necessary */
+  }
+  
+  
+  
+  .pokemon-card {
+    background-color: #FFD6A5; /* Soft orange/beige for contrast */
+    color: #2C3E50; /* Darker text for readability */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    overflow: hidden; /* Ensures no overflow for rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for interactions */
+  }
+  
+  .pokemon-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover for depth */
+  }
+  
+
+.card-content {
+padding: 20px; /* Spacing inside the card */
 }
+
+.alphabet-slider {
+/* Styling for the slider */
+background-color: #4ECDC4; /* Bright teal for the slider background */
+border-radius: 12px; /* Rounded corners for the slider */
+}
+
+/* Styles for buttons and other interactive elements */
+.button {
+background-color: #4ECDC4; /* Bright teal for buttons */
+color: #0D1B2A; /* Deep navy blue text on buttons */
+}
+
+.button:hover {
+background-color: #3B9B9C; /* Slightly darker shade on hover */
+}
+
+/* Add additional selectors and styles as needed */
